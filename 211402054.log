@@ -1,0 +1,16 @@
+MariaDB [(none)]> USE uas_sbd;
+Database changed
+MariaDB [uas_sbd]> CREATE VIEW 211402054 AS (
+    -> LEFT JOIN task_plans b
+    -> ON a.task_id = b.id
+    -> LEFT JOIN task_indicators c
+    -> ON b.indicators_id = c.id
+    -> LEFT JOIN task_categories d
+    -> ON b.category_id = d.id
+    -> LEFT JOIN users e
+    -> ON b.user_create = e.id
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '211402054 AS (
+LEFT JOIN task_plans b
+ON a.task_id = b.id
+LEFT JOIN task_indi...' at line 1
